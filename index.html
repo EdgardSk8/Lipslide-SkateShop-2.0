@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="/Styles/Encabezado.css">
     <link rel="stylesheet" href="/Styles/Cuerpo.css">
+    <link rel="stylesheet" href="/Styles/filtros.css">
     <link rel="stylesheet" href="/Styles/Presentacion.css">
     <link rel="stylesheet" href="/Styles/Footer.css">
 
@@ -67,35 +68,55 @@
 
         </div>
 
-        <div class="seccion-2" id="seccion-2"> <!-- Seccion 2 Dirigida a la Venta de Productos de Skate -->
+        <div class="filtro-contenedor">
+            
+            <h2 class="titulo-filtros">Filtrar productos</h2>
 
-            <h2>Decks</h2> <br>
+            <div class="filtro">
+                <label for="select-categoria">Categoría</label>
+                <select id="select-categoria"></select>
+            </div>
 
-            <div id="contenedor-productos-skate"></div>
-              
+            <div class="filtro">
+                <label for="select-tipo">Tipo</label>
+                <select id="select-tipo" disabled></select>
+            </div>
         </div>
 
-        <div class="seccion-3" id="seccion-3"> <!-- Seccion 3 Dirigida a la Venta de Productos de Accesorios -->
+        <!-- Contenedor donde se mostrarán los productos filtrados -->
+        <div id="contenedor-productos-filtrados"></div>
 
-            <h2>Accesorios</h2> <br>
+            <div class="seccion-2" id="seccion-2"> <!-- Seccion 2 Dirigida a la Venta de Productos de Skate -->
 
-            <div id="contenedor-productos-accesorios"></div>
+                <h2>Decks</h2> <br>
 
-        </div>
+                <div id="contenedor-productos-skate"></div>
+                
+            </div>
 
-        <div class="seccion-4" id="seccion-4"> <!-- Seccion 4 Dirigida a la Venta de Accesorios -->
+            <div class="seccion-3" id="seccion-3"> <!-- Seccion 3 Dirigida a la Venta de Productos de Accesorios -->
 
-            <h2>Stickers</h2> <br>
+                <h2>Accesorios</h2> <br>
 
-            <div id="contenedor-productos-stickers"></div>
+                <div id="contenedor-productos-accesorios"></div>
 
-        </div>
+            </div>
 
-        <div class="seccion-5" id="seccion-5"> <!-- Seccion 2 Dirigida a la Venta de Productos de Skate -->
+            <div class="seccion-4" id="seccion-4"> <!-- Seccion 4 Dirigida a la Venta de Accesorios -->
 
-            <h2>Ropa</h2> <br>
+                <h2>Stickers</h2> <br>
 
-            <div id="contenedor-productos-ropa"></div>
+                <div id="contenedor-productos-stickers"></div>
+
+            </div>
+
+            <div class="seccion-5" id="seccion-5"> <!-- Seccion 2 Dirigida a la Venta de Productos de Skate -->
+
+                <h2>Ropa</h2> <br>
+
+                <div id="contenedor-productos-ropa"></div>
+
+            </div>
 
         </div>
 

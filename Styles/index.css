@@ -86,6 +86,14 @@
       background-color: #450000;
     }
 
+    #contenedor-productos-filtrados {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 20px;
+    }
+
+
   /*------------------------------------------------------*/
   
   .splide {
