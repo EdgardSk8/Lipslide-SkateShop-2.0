@@ -27,7 +27,7 @@ cargarProductos({
 
         const productosFiltrados = BD.filter(p =>
           p.Disponible === true && tiposPermitidos.includes(p.Tipo)
-        ).slice(0, 4);
+        )//.slice(0, 4); //Limitar numero de productos por categoria
 
         productosFiltrados.forEach((producto, index) => {
           const card = document.createElement("div");

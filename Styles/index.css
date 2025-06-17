@@ -77,12 +77,15 @@
     border-radius: 4px;            
     font-size: 16px;                
     cursor: pointer;               
-    transition: background-color 0.5s ease;
+    transition: background-color 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 123, 255, 0.4); /* Sombra sutil */
     bottom: 2px;
   }
 
-  
+    .botones button:hover{
+      background-color: #450000;
+    }
+
   /*------------------------------------------------------*/
   
   .splide {
@@ -138,6 +141,7 @@
       border-radius: 8px;
       box-sizing: border-box;
       margin: 10px;
+      font-size: 14px;
     }
   
     .botones button{
