@@ -1,0 +1,118 @@
+.Presentacion-1 {
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.Presentacion-1 p {
+    flex: 1;
+    color: white;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Alfa Slab One', serif;
+    opacity: 0;
+    pointer-events: none; 
+}
+
+.Presentacion-1 img {
+    flex: 1;
+    height: 100%;
+    max-height: 600px;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0;
+}
+
+/* Animaciones */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-text {
+    animation: fadeInText 1.2s ease-in-out forwards;
+}
+
+.animate-image {
+    animation: fadeInImage 1.0s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+.Presentacion-2 {
+    position: relative;    /* Contenedor relativo para el texto absoluto */
+    height: 100vh;
+    overflow: hidden;
+}
+  
+.Presentacion-2 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+  
+.Presentacion-2 p {
+    position: absolute;    /* Para superponerlo encima de la imagen */
+    top: 50%;             /* Centrar verticalmente */
+    left: 50%;            /* Centrar horizontalmente */
+    transform: translate(-50%, -50%);
+    color: rgb(189, 26, 26);         /* Color visible sobre la imagen */
+    font-size: 60px;
+    font-family: 'Alfa Slab One', serif;
+    text-align: center;
+    margin: 0;
+    pointer-events: none; /* Para que el texto no interfiera */
+    -webkit-text-stroke: 1px rgb(255, 255, 255); /* grosor y color del borde */
+}
+  
+  /*----------------------------------------------------------------------------------------------*/
+
+  /* RESPONSIVE: móvil o pantallas pequeñas */
+@media screen and (max-width: 768px) {
+
+    .Presentacion-1 {
+        flex-direction: column;
+        height: 100vh; /* para ocupar toda la altura de la pantalla */
+        align-items: center;
+    }
+    
+    .Presentacion-1 p {
+        font-size: 36px;
+    }
+    
+    .Presentacion-1 img {
+        height: auto;
+        max-height: 600px;
+        width: 100%;
+    }
+    
+    .Presentacion-2 p {
+        font-size: 26px;
+        -webkit-text-stroke: 0.8px white;
+    }
+
+      
+}

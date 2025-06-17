@@ -1,0 +1,28 @@
+.footer {
+  margin-top: 20px;
+  background-color: #111;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.footer-redes {
+  margin-bottom: 15px;
+}
+
+.footer-redes a {
+  color: white;
+  font-size: 24px;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-redes a:hover {
+  color: #1e90ff;
+}
+
+.footer-text {
+  font-size: 14px;
+  color: #aaa;
+}
+  

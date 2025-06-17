@@ -1,0 +1,151 @@
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Separar logo y navegación a extremos */
+    align-items: center;
+    background-color: #222;  /* Fondo oscuro */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  
+  .Titulo_Barra {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .Titulo_Barra img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .Titulo_Barra p {
+    color: rgba(255, 255, 255, 0.959);
+    font-family: 'Alfa Slab One', serif;
+    letter-spacing: 2px;
+    font-size: 28px;
+    margin: 0;
+  }
+  
+  .navegacion {
+    display: flex;
+    gap: 10px;
+    padding-right: 20px;
+  }
+  
+  .navegacion a{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    padding: 6px 12px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .navegacion a:hover {
+    background-color: #ffffff;
+    color: #222;
+    cursor: pointer;
+  }
+
+/*---------------------------------------------------------------------------------------------*/
+
+.navegacion-2 {
+  position: fixed;
+  top: 70;
+  z-index: 999;
+  background-color: #000000;
+  width: 100%;
+}
+
+.Menu-Principal { /* Contenedor del menú principal centrado */
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-weight: bold;
+}
+
+.Menu-Item { position: relative;} /* Cada ítem del menú principal */
+
+.Menu-Item > a { /* Enlaces del menú principal */
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: color 0.3s;
+}
+
+.Menu-Item > a:hover {color: #ff0000;}
+
+.Sub-Menus { /* Submenús ocultos por defecto */
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2c2c2c;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  padding: 0.5rem 0;
+  min-width: 150px;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.Sub-Menus a { /* Enlaces dentro del submenú */
+  color: white;
+  padding: 0.5rem 1rem;
+  display: block;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.Sub-Menus a:hover {background-color: #b60c0c; }
+
+.Menu-Item:hover .Sub-Menus { display: flex; }/* Mostrar submenú al hacer hover en el contenedor */
+
+@media screen and (max-width: 768px) {
+  .Menu-Principal {gap: 0px;}
+}
+
+/*----------------------------------------------------------------------------------------*/
+
+  /* Responsive: Tablets y móviles */
+@media screen and (max-width: 768px) {
+
+  .encabezado {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .Titulo_Barra {
+    width: 100%;
+  }
+
+  .Titulo_Barra img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .Titulo_Barra p {
+    font-size: 18px;
+  }
+
+  .navegacion {
+    width: 100%;
+    justify-content: center;
+    gap: 0px;
+    flex-wrap: wrap;
+    background-color: black; 
+    padding: 5px;
+  }
+
+  .navegacion a {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+}

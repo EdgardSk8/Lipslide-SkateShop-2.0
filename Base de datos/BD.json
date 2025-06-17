@@ -1,0 +1,179 @@
+[
+    {
+      "ID": 1,
+      "Marca": "Tabla DeathWish",
+      "Descripcion": "Death Wish Jaime Foy pro model",
+      "Tipo": "Tabla",
+      "Medida": "8.5",
+      "Precio": 65.00,
+      "Unidades": 10,
+      "Disponible": true,
+      "Imagenes": [
+        "/Recursos/Seccion 2/Tablas/TablaArmada-Almost.png"
+      ]
+    },
+    {
+      "ID": 2,
+      "Marca": "Skate Armado Almost",
+      "Descripcion": "Skate Armado Almost",
+      "Tipo": "Tabla",
+      "Medida": "8.0",
+      "Precio": 125,
+      "Unidades": 7,
+      "Disponible": true,
+      "Imagenes": [
+        "/Recursos/Seccion 2/Tablas/TablaArmada-Almost-2.jpg",
+        "/Recursos/Seccion 2/Tablas/TablaArmada-Almost-1.jpg"
+      ]
+    },
+    {
+      "ID": 3,
+      "Marca": "Lubricante para Rodamientos",
+      "Descripcion": "Speed Cream",
+      "Tipo": "Rodamientos",
+      "Medida": "",
+      "Precio": 10,
+      "Unidades": 5,
+      "Disponible": true,
+      "Imagenes": [
+        "/Recursos/Seccion 2/Extras/Lubricante-1.jpg",
+        "/Recursos/Seccion 2/Extras/Lubricante-2.jpg"
+      ]
+    },
+    {
+      "ID": 4,
+      "Marca": "Rodamientos Bronson",
+      "Descripcion": "Rodamientos Bronson Felipe Nunez",
+      "Tipo": "Rodamientos",
+      "Medida": "",
+      "Precio": 25,
+      "Unidades": 10,
+      "Disponible": true,
+      "Imagenes": [
+        "/Recursos/Seccion 2/Rodamientos/Rodamientos-Bronson-FelipeNunez-1.jpg",
+        "/Recursos/Seccion 2/Rodamientos/Rodamientos-Bronson-FelipeNunez-2.jpg",
+        "/Recursos/Seccion 2/Rodamientos/Rodamientos-Bronson-FelipeNunez-3.jpg",
+        "/Recursos/Seccion 2/Rodamientos/Rodamientos-Bronson-FelipeNunez-4.jpg"
+      ]
+    },
+    {
+      "ID": 5,
+      "Marca": "April Guy Mariano",
+      "Descripcion": "April Guy Mariano - 1990 Pro Model ",
+      "Tipo": "Tabla",
+      "Medida": "8.5",
+      "Precio": 65,
+      "Unidades": 7,
+      "Disponible": true,
+      "Imagenes": [
+        "/Recursos/Seccion 2/Tablas/April-GuyMariano-1.jpg",
+        "/Recursos/Seccion 2/Tablas/April-GuyMariano-2.jpg"
+      ]
+    },
+    {
+      "ID": 6,
+      "Marca": "Lija Slayer X MobGrip",
+      "Descripcion": "Lija Slayer X MobGrip",
+      "Tipo": "Lija",
+      "Medida": "",
+      "Precio": 13,
+      "Unidades": 5,
+      "Disponible": true,
+      "Imagenes": [
+        "/Recursos/Seccion 2/Lijas/LijaSlayerMobGrip.png"
+      ]
+    },
+    {
+      "ID": 7,
+      "Marca": "Llave de Skate Independent",
+      "Descripcion": "Llave de Skate Independent",
+      "Tipo": "Llave",
+      "Medida": "",
+      "Precio": 15,
+      "Unidades": 5,
+      "Disponible": true,
+      "Imagenes": [
+        "/Recursos/Seccion 2/Extras/Llaveskateindependent.png"
+      ]
+    },
+    {
+      "ID": 8,
+      "Marca": "Pivots",
+      "Descripcion": "Pivots CUPS Independent",
+      "Tipo": "Pivot",
+      "Medida": "",
+      "Precio": 1,
+      "Unidades": 5,
+      "Disponible": true,
+      "Imagenes": [
+        "/Recursos/Seccion 2/Extras/Pivotsindependent.jpg"
+      ]
+    },
+    {
+      "ID": 9,
+      "Marca": "Cadena de Skate",
+      "Descripcion": "Cadena de Skate",
+      "Tipo": "Cadena",
+      "Medida": "",
+      "Precio": 10,
+      "Unidades": 5,
+      "Disponible": true,
+      "Imagenes": [
+        "/Recursos/Seccion 2/Accesorios/CadenaSkate.jpg"
+      ]
+    },
+    {
+      "ID": 10,
+      "Marca": "Cadena de skate Truck de Oro",
+      "Descripcion": "Cadena de skate Truck de Oro",
+      "Tipo": "Cadena",
+      "Medida": "",
+      "Precio": 50,
+      "Unidades": 5,
+      "Disponible": true,
+      "Imagenes": [
+        "/Recursos/Seccion 2/Accesorios/CadenaSkateOroTruck.png"
+      ]
+    },
+    {
+      "ID": 11,
+      "Marca": "Sticker Santa Cruz",
+      "Descripcion": "Sticker Santa Cruz",
+      "Tipo": "Sticker",
+      "Medida": "",
+      "Precio": 14,
+      "Unidades": 5,
+      "Disponible": true,
+      "Imagenes": [
+        "/Recursos/Seccion 2/Stickers/StickerSantaCruz.png"
+      ]
+    },
+    {
+      "ID": 12,
+      "Marca": "Zapatos Vans",
+      "Descripcion": "Zapatos Vans",
+      "Tipo": "Ropa",
+      "Medida": "Talla 9.5 US",
+      "Precio": 89.99,
+      "Unidades": 5,
+      "Disponible": true,
+      "Imagenes": [
+        "/Recursos/Seccion 2/Ropa/Zapatos-Vans.png"
+      ]
+    },
+    {
+      "ID": 13,
+      "Marca": "Baker",
+      "Descripcion": "Tabla Baker Roja Clasica",
+      "Tipo": "Tabla",
+      "Medida": "8.5",
+      "Precio": 67,
+      "Unidades": 7,
+      "Disponible": true,
+      "Imagenes": [
+        "/Recursos/Seccion 2/Tablas/Baker-Roja-1.png",
+        "/Recursos/Seccion 2/Tablas/Baker-Roja-2.png"
+      ]
+    }
+  ]
+  
