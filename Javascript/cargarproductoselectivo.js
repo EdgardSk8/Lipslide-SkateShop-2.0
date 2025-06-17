@@ -160,7 +160,7 @@ function inicializarFiltros() {
   const contenedorFiltrado = document.getElementById("contenedor-productos-filtrados");
 
   // Llenar select de categorías
-  selectCategoria.innerHTML = `<option value="">Selecciona una categoría</option>`;
+  selectCategoria.innerHTML = `<option value="">Todos los productos</option>`;
   Object.keys(categorias).forEach(cat => {
     const option = document.createElement("option");
     option.value = cat;

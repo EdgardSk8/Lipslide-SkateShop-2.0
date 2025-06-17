@@ -134,6 +134,10 @@
     #contenedor-productos-ropa {
       grid-template-columns: 1fr;
     }
+
+    #contenedor-productos-filtrados {
+      grid-template-columns: 1fr;
+    }
   
     .cards {
       height: auto;
