@@ -2,69 +2,100 @@
 <html lang="en">
 <head>
 
-<meta property="og:image" content="https://lipslide-skateshop.web.app/logofondooscuro.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="600" />
-<meta property="og:image:height" content="600" />
+    <!------------------------------------------------------------------------------------------->
 
+    <!--------------------------------->
+    <!-- Logo al compartir por redes -->
+    <!--------------------------------->
+
+    <meta property="og:image" content="https://lipslide-skateshop.web.app/logofondooscuro.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+
+    <!------------------------------------------------------------------------------------------->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!------------------------->
+    <!-- Titulo de la pagina -->
+    <!------------------------->
+
     <title>Lipslide SkateShop</title>
 
-    <link rel="stylesheet" href="/Styles/index.css">
+    <!------------------------------------------------------------------------------------------->
 
-    <link rel="stylesheet" href="/Styles/Encabezado.css">
-    <link rel="stylesheet" href="/Styles/Cuerpo.css">
-    <link rel="stylesheet" href="/Styles/filtros.css">
-    <link rel="stylesheet" href="/Styles/Presentacion.css">
-    <link rel="stylesheet" href="/Styles/Footer.css">
+    <!---------------------------->
+    <!-- Archivos de estilo css -->
+    <!---------------------------->
 
-    <!-- Awesome para mostrar los iconos de redes -->
-    <link rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="/Styles/index.css"> <!-- Estilo de pagina general -->
+    <link rel="stylesheet" href="/Styles/Encabezado.css"> <!-- Estilo de Navbar -->
+    <link rel="stylesheet" href="/Styles/Cuerpo.css"> <!-- Estrucura de toda la pagina -->
+    <link rel="stylesheet" href="/Styles/filtros.css"> <!-- Estilo de filtros de productos -->
+    <link rel="stylesheet" href="/Styles/Presentacion.css"> <!-- Estilo primeras 2 paginas de presentacion -->
+    <link rel="stylesheet" href="/Styles/Footer.css"> <!-- Estilo de pie de pagina -->
 
-    <!-- CSS de Splide -->
+    <!------------------------------------------------------------------------------------------->
+
+    <!--------------------------------->
+    <!-- URLS de recursos utilizados -->
+    <!--------------------------------->
+
+    <!-- Libreria awesome para mostrar los iconos de redes en el footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+    <!-- CSS y JS libreria Splide (Carrusel) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
 
     <!-- Fuente Serif Condesado -->
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/png" href="Recursos/Logos/LogoSinFondo.png">
+    <!------------------------------------------------------------------------------------------->
+
+    <!---------------------------------------------------------------->
+    <!--  establecer el ícono de la pestaña del navegador (favicon) -->
+    <!---------------------------------------------------------------->
+
+    <link rel="icon" type="image/png" href="logofondooscuro.png">
+
+    <!------------------------------------------------------------------------------------------->
 
 </head>
 
 <body>
 
-    <section class="Presentacion-1">
+    <section class="Presentacion-1"> <!-- Primera presentacion al iniciar la pagina -->
 
-        <p>Bienvenidos a Lipslide SkateShop</p>
-        <img src="/Recursos/Logos/LogoSinFondo.png" alt="Logo Lipslide">
-        </p> <!-- Relleno para centrar -->
+        <p>Bienvenidos a Lipslide SkateShop</p> <!-- Titulo -->
+        <img src="/Recursos/Logos/LogoSinFondo.png" alt="Logo Lipslide"> <!-- Logo de la primera seccion -->
+        </p> <!-- Relleno para centrar logo en celular -->
 
     </section>
 
-    <div class="Presentacion-2">
+    <div class="Presentacion-2"> <!-- Segunda presentacion al deslizar hacia abajo -->
 
-        <p>La Tienda de skate #1 de Nicaragua</p>
-        <img src="/Recursos/Logos/Presentacion2.gif" alt="">
+        <p>La Tienda de skate #1 de Nicaragua</p> <!-- Titulo -->
+        <img src="/Recursos/Logos/Presentacion2.gif" alt=""> <!-- Gift presentacion -->
 
     </div>
 
-    <header class="encabezado"> <!-- Barra Superior -->
+    <header class="encabezado"> <!-- Navbar -->
 
-        <div class="Titulo_Barra"> <!-- Clase de logotipo y Titulo -->
-            <a href="./">
-                <!--<img src="Recursos/Logos/LogoSinFondo.png" alt=""> -->
-            </a>
-            <p style="margin: 10px;">LIPSLIDE SKATESHOP</p>
+        <div class="Titulo_Barra"> <!-- Titulo en la navbar -->
+            <!-- <a href="./"> <img src="Recursos/Logos/LogoSinFondo.png" alt="">  </a> --> <!-- Logo en la navbar -->
+                
+            <p style="margin: 10px;">LIPSLIDE SKATESHOP</p><!-- Titulo -->
+
         </div>
-
 
     </header>
 
-    <div class="cuerpo"> 
+    <!------------------------------------------------------------------------------------------->
+
+    <div class="cuerpo"> <!-- Cuerpo de presentacion de prodcutos -->
 
         <div class="seccion-1">  <!-- Seccion 1 Dirigida a Productos Calientes -->
 
@@ -75,77 +106,79 @@
 
         </div>
 
-        <div class="filtro-contenedor">
-            
-            <h2 class="titulo-filtros">Filtrar productos</h2>
+        <!------------------------------------------------------------------------------------------->
 
-            <div class="filtro">
-                <label for="select-categoria">Categoría</label>
-                <select id="select-categoria"></select>
+        <div class="filtro-contenedor"> <!-- Contenedor de filtro para buscar productos --> 
+            
+            <h2 class="titulo-filtros">Filtrar productos</h2> <!-- Titulo -->
+
+            <div class="filtro"> <label>Categoría</label> <!-- Mini contenedor para buscar por categoria -->
+                <select id="select-categoria"></select> <!-- Selector de categoria -->
             </div>
 
-            <div class="filtro">
-                <label for="select-tipo">Tipo</label>
-                <select id="select-tipo" disabled></select>
+            <div class="filtro"> <label>Tipo</label> <!-- Mini contenedor para buscar por tipo -->
+                <select id="select-tipo" disabled></select> <!-- Selector de productos -->
             </div>
         </div>
+
+        <!------------------------------------------------------------------------------------------->
 
         <!-- Contenedor donde se mostrarán los productos filtrados -->
         <div id="contenedor-productos-filtrados"></div>
 
             <div class="seccion-2" id="seccion-2"> <!-- Seccion 2 Dirigida a la Venta de Productos de Skate -->
-
                 <h2>Decks</h2> <br>
-
-                <div id="contenedor-productos-skate"></div>
-                
+                <div id="contenedor-productos-skate"></div> <!-- Contenedor cargado dinamicamente -->
             </div>
 
             <div class="seccion-3" id="seccion-3"> <!-- Seccion 3 Dirigida a la Venta de Productos de Accesorios -->
-
                 <h2>Accesorios</h2> <br>
-
-                <div id="contenedor-productos-accesorios"></div>
-
+                <div id="contenedor-productos-accesorios"></div> <!-- Contenedor cargado dinamicamente -->
             </div>
 
             <div class="seccion-4" id="seccion-4"> <!-- Seccion 4 Dirigida a la Venta de Accesorios -->
-
                 <h2>Stickers</h2> <br>
-
-                <div id="contenedor-productos-stickers"></div>
-
+                <div id="contenedor-productos-stickers"></div> <!-- Contenedor cargado dinamicamente -->
             </div>
 
             <div class="seccion-5" id="seccion-5"> <!-- Seccion 2 Dirigida a la Venta de Productos de Skate -->
-
                 <h2>Ropa</h2> <br>
-
-                <div id="contenedor-productos-ropa"></div>
-
+                <div id="contenedor-productos-ropa"></div> <!-- Contenedor cargado dinamicamente -->
             </div>
 
         </div>
 
+        <!------------------------------------------------------------------------------------------->
+
     </div>
 
-    <footer class="footer">
+    <!------------------------------------------------------------------------------------------->
 
-        <div class="footer-redes">
+    <footer class="footer"> <!-- Pie de pagina -->
+
+        <div class="footer-redes"> <!-- Zona de redes -->
 
           <a href="https://www.facebook.com/share/1LUHMhKkEj/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/lipslide_skate_shop?igsh=cXhsdDY1cHRhaDkz" target="_blank"><i class="fab fa-instagram"></i></a>
           <a href="https://wa.me/+50585310766" target="_blank"><i class="fab fa-whatsapp"></i></a>
           <a href="mailto:ejemplo@correo.com"><i class="fas fa-envelope"></i></a>
+
         </div>
 
         <p class="footer-text">© 2025 Lipslide SkateShop. Todos los derechos reservados.</p>
 
     </footer>
-      
-    
 
-    <script src="Javascript/cargarproductoselectivo.js"></script>
-    <script src="Javascript/presentacion.js"></script>
+    <!------------------------------------------------------------------------------------------->
+
+    <!-------------------------------------->
+    <!-- Zona de insercion de archivos js -->
+    <!-------------------------------------->
+
+    <script src="Javascript/cargarproductoselectivo.js"></script> <!-- Cargar productos y filtrar -->
+    <script src="Javascript/presentacion.js"></script> <!-- Presentacion al entrar a la pagina -->
+
+    <!------------------------------------------------------------------------------------------->
+
 </body>
 </html>
