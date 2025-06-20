@@ -1,29 +1,28 @@
 
-// ------------------------------
-// CONFIGURACIÓN INICIAL
-// ------------------------------
+/* ------------------------------------------------------------------------------------ */
 
-const JSON_URL = "/Base de datos/BD.json"; // Conexion con la base de datos
+const JSON_URL = "/Base de datos/BD.json"; // Ruta del archivo JSON con los productos
 
-const categorias = {
-  "Decks": ["Tabla", "Rodamientos", "Lija", "Llave", "Pivot"],
+const categorias = { // Categoria de productos
+  "Decks": ["Tabla", "Rodamientos", "Lijas", "Llave", "Pivot"],
   "Accesorios": ["Cadena"],
   "Stickers": ["Sticker"],
   "Ropa": ["Ropa"]
 };
 
-// ------------------------------
-// INICIO
-// ------------------------------
+/* ------------------------------------------------------------------------------------ */
+
+/* Al iniciar la pagina cargar las funciones */
 
 document.addEventListener("DOMContentLoaded", () => {
-  cargarProductosPorCategorias();
-  inicializarFiltros();
+  cargarProductosPorCategorias(); //Cargar productos por seccion
+  inicializarFiltros(); // Funcion de filtros de busqueda
 });
 
-// ------------------------------
-// CARGA INICIAL POR CATEGORÍAS
-// ------------------------------
+/* ------------------------------------------------------------------------------------ */
+
+/* Al iniciar la pagina, carga los productos por categoria */
+
 function cargarProductosPorCategorias() {
   cargarProductos({
     contenedorId: "contenedor-productos-skate",
@@ -46,9 +45,9 @@ function cargarProductosPorCategorias() {
   });
 }
 
-// ------------------------------
-// FUNCIÓN DE CARGA GENERAL
-// ------------------------------
+/* ------------------------------------------------------------------------------------ */
+
+/* FUNCIÓN DE CARGA GENERAL */
 function cargarProductos({ contenedorId, tiposPermitidos }) {
   obtenerProductos()
     .then(BD => {
@@ -72,16 +71,14 @@ function cargarProductos({ contenedorId, tiposPermitidos }) {
     });
 }
 
-// ------------------------------
-// OBTENER PRODUCTOS DEL JSON
-// ------------------------------
-function obtenerProductos() {
-  return fetch(JSON_URL).then(res => res.json());
-}
+/* ------------------------------------------------------------------------------------ */
 
-// ------------------------------
-// FILTRAR PRODUCTOS POR TIPO Y DISPONIBILIDAD
-// ------------------------------
+/* Obtener todos los productos por medio del archivo json */
+function obtenerProductos() { return fetch(JSON_URL).then(res => res.json()); }
+
+/* ------------------------------------------------------------------------------------ */
+
+/* FILTRAR PRODUCTOS POR TIPO Y DISPONIBILIDAD */
 function filtrarProductos(productos, tiposPermitidos) {
   return productos.filter(p =>
     p.Disponible === true &&
@@ -89,9 +86,9 @@ function filtrarProductos(productos, tiposPermitidos) {
   );
 }
 
-// ------------------------------
-// CREAR CARD DE PRODUCTO
-// ------------------------------
+/* ------------------------------------------------------------------------------------ */
+
+/* CREACION DINAMICA DE LAS CARD DE LOS PRODUCTOS */
 function crearCardProducto(producto, identificador) {
   const card = document.createElement("div");
   card.classList.add("cards");
@@ -122,9 +119,9 @@ function crearCardProducto(producto, identificador) {
   };
 }
 
-// ------------------------------
-// CREAR HTML DEL CARRUSEL SPLIDE
-// ------------------------------
+/* ------------------------------------------------------------------------------------ */
+
+/* CREAR HTML DEL CARRUSEL SPLIDE */
 function crearCarrusel(imagenes, identificador) {
   const slides = imagenes.map(imagen => `
     <li class="splide__slide">
@@ -143,9 +140,9 @@ function crearCarrusel(imagenes, identificador) {
   `;
 }
 
-// ------------------------------
-// MONTAR CARRUSEL SPLIDE
-// ------------------------------
+/* ------------------------------------------------------------------------------------ */
+
+/* MONTAR CARRUSEL SPLIDE */
 function montarCarrusel(id, mostrarFlechas) {
   new Splide(`#${id}`, {
     type: 'loop',
@@ -154,9 +151,9 @@ function montarCarrusel(id, mostrarFlechas) {
   }).mount();
 }
 
-// ------------------------------
-// FILTRO CATEGORÍA / TIPO
-// ------------------------------
+/* ------------------------------------------------------------------------------------ */
+
+/* FILTRO CATEGORÍA / TIPO */
 function inicializarFiltros() {
   const selectCategoria = document.getElementById("select-categoria");
   const selectTipo = document.getElementById("select-tipo");
@@ -164,6 +161,7 @@ function inicializarFiltros() {
 
   // Llenar select de categorías
   selectCategoria.innerHTML = `<option value="">Todos los productos</option>`;
+  selectTipo.innerHTML = `<option value="">Seleccione Categoria</option>`;
   Object.keys(categorias).forEach(cat => {
     const option = document.createElement("option");
     option.value = cat;
@@ -171,10 +169,12 @@ function inicializarFiltros() {
     selectCategoria.appendChild(option);
   });
 
-  // Al cambiar categoría
+  /* ------------------------------------------------------------------------------------ */
+
+  /* AL CAMBIAR LA CATEGORIA */
   selectCategoria.addEventListener("change", () => {
     const categoriaSeleccionada = selectCategoria.value;
-
+    
     selectTipo.innerHTML = `<option value="">Todos</option>`;
     selectTipo.disabled = !categoriaSeleccionada;
 
@@ -193,14 +193,16 @@ function inicializarFiltros() {
         tiposPermitidos: categorias[categoriaSeleccionada]
       });
 
-      ocultarSecciones(); // opcional
+      ocultarSecciones(); 
     } else {
       contenedorFiltrado.innerHTML = "";
-      mostrarSecciones(); // opcional
+      mostrarSecciones();
     }
   });
 
-  // Al cambiar tipo
+  /* ------------------------------------------------------------------------------------ */
+
+  /* AL CAMBIAR TIPO */
   selectTipo.addEventListener("change", () => {
     const categoriaSeleccionada = selectCategoria.value;
     const tipoSeleccionado = selectTipo.value;
@@ -221,9 +223,9 @@ function inicializarFiltros() {
   });
 }
 
-// ------------------------------
-// OPCIONAL: Ocultar/Mostrar secciones cuando se filtra
-// ------------------------------
+/* ------------------------------------------------------------------------------------ */
+
+/* Ocultar/Mostrar secciones cuando se filtra */
 function ocultarSecciones() {
   document.getElementById("seccion-2").style.display = "none";
   document.getElementById("seccion-3").style.display = "none";

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agregar Producto</title>
+  <style>
+    form {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      background: #f0f0f0;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 6px;
+      margin-top: 4px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background-color: #0084ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">Agregar Nuevo Producto</h2>
+
+  <form
+    id="form-producto"
+    enctype="multipart/form-data"
+    method="POST"
+    action="/agregar"
+  >
+    <label for="ID">ID</label>
+    <input type="number" name="ID" id="inputID" disabled />
+
+    <label for="Marca">Marca</label>
+    <input type="text" name="Marca" required />
+
+    <label for="Descripcion">Descripción</label>
+    <textarea name="Descripcion" required></textarea>
+
+    <label for="Tipo">Tipo</label>
+    <select name="Tipo" required>
+      <option value="Tabla">Tablas</option>
+      <option value="Rodamientos">Rodamientos</option>
+      <option value="Lijas">Lijas</option>
+      <option value="Llave">Llaves</option>
+      <option value="Pivot">Pivots</option>
+      <option value="Cadena">Cadenas</option>
+      <option value="Sticker">Stickers</option>
+      <option value="Ropa">Ropa</option>
+    </select>
+
+    <label for="Medida">Medida</label>
+    <input type="text" name="Medida" />
+
+    <label for="Precio">Precio ($)</label>
+    <input type="number" name="Precio" step="0.01" required />
+
+    <label for="Unidades">Unidades</label>
+    <input type="number" name="Unidades" required />
+
+    <label for="Disponible">Disponible</label>
+    <input type="checkbox" name="Disponible" checked />
+
+    <label for="imagen">Imagen del producto</label>
+    <input type="file" name="imagen" accept="image/*" required />
+
+    <label for="NombreImagen">Nombre para la imagen (sin extensión)</label>
+    <input type="text" name="NombreImagen" required />
+
+    <button type="submit">Guardar producto</button>
+  </form>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const res = await fetch("/proximo-id");
+        const data = await res.json();
+        document.getElementById("inputID").value = data.nuevoID;
+      } catch (error) {
+        console.error("Error al obtener el próximo ID:", error);
+        document.getElementById("inputID").value = "Error";
+      }
+    });
+  </script>
+</body>
+</html>
