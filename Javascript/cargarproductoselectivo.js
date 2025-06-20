@@ -1,7 +1,9 @@
+
 // ------------------------------
 // CONFIGURACIÓN INICIAL
 // ------------------------------
-const JSON_URL = "/Base de datos/BD.json";
+
+const JSON_URL = "/Base de datos/BD.json"; // Conexion con la base de datos
 
 const categorias = {
   "Decks": ["Tabla", "Rodamientos", "Lija", "Llave", "Pivot"],
@@ -13,6 +15,7 @@ const categorias = {
 // ------------------------------
 // INICIO
 // ------------------------------
+
 document.addEventListener("DOMContentLoaded", () => {
   cargarProductosPorCategorias();
   inicializarFiltros();
