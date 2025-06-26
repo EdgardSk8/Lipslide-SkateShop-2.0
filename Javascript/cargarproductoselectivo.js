@@ -74,7 +74,11 @@ function cargarProductos({ contenedorId, tiposPermitidos }) {
 /* ------------------------------------------------------------------------------------ */
 
 /* Obtener todos los productos por medio del archivo json */
-function obtenerProductos() { return fetch(JSON_URL).then(res => res.json()); }
+function obtenerProductos() {
+  const urlConCacheBuster = `${JSON_URL}?v=${Date.now()}`;
+  return fetch(urlConCacheBuster).then(res => res.json());
+}
+
 
 /* ------------------------------------------------------------------------------------ */
 
