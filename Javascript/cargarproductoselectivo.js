@@ -107,7 +107,7 @@ function crearCardProducto(producto, identificador) {
       </p>
       <br>
       <div class="botones">
-        <button>Agregar al carrito</button>
+        <button class="btn-agregar-carrito">Agregar al carrito</button>
       </div>
     </div>
   `;
@@ -239,3 +239,4 @@ function mostrarSecciones() {
   document.getElementById("seccion-4").style.display = "block";
   document.getElementById("seccion-5").style.display = "block";
 }
+ 

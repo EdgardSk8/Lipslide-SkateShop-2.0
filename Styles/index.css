@@ -62,7 +62,6 @@
     margin-bottom: 20px;
   }
 
-
   .info {
     padding: 10px;
     display: flex;
@@ -70,22 +69,29 @@
     flex: 1;
   }
   
-  .botones button{
-    padding: 10px 20px;
-    background-color: #ca0303;       
-    color: white;                   
-    border: none;                  
-    border-radius: 4px;            
-    font-size: 16px;                
-    cursor: pointer;               
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.4); /* Sombra sutil */
-    bottom: 2px;
-  }
+.botones button {
+  padding: 10px 20px;
+  background-color: #ca0303;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.1s ease, transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.4); /* Sombra sutil */
+  bottom: 2px;
+}
 
-  .botones button:hover{
-    background-color: #450000;
-  }
+.botones button:hover {
+  background-color: #450000;
+}
+
+.botones button:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 rgba(0, 123, 255, 0);
+  background-color: #3a0000; /* Un poco más oscuro al presionar */
+}
+
 
   #contenedor-productos-filtrados {
   display: grid;
