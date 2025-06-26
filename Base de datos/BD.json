@@ -156,7 +156,7 @@
     "Medida": "Talla 9.5 US",
     "Precio": 89.99,
     "Unidades": 5,
-    "Disponible": true,
+    "Disponible": false,
     "Imagenes": [
       "/Recursos/Seccion 2/Ropa/Zapatos-Vans.png"
     ]
@@ -173,6 +173,110 @@
     "Imagenes": [
       "/Recursos/Seccion 2/Tabla/Baker-Roja-1.png",
       "/Recursos/Seccion 2/Tabla/Baker-Roja-2.png"
+    ]
+  },
+  {
+    "ID": 14,
+    "Marca": "Sudadera Element",
+    "Descripcion": "Sudadera Element Seal Ridge Cafe",
+    "Tipo": "Ropa",
+    "Medida": "",
+    "Precio": 30,
+    "Unidades": 1,
+    "Disponible": true,
+    "Imagenes": [
+      "/Recursos/Seccion 2/Ropa/Sudadera-Element-1.jpg"
+    ]
+  },
+  {
+    "ID": 15,
+    "Marca": "Cinturon Santa Cruz",
+    "Descripcion": "Cinturon Santa Cruz Negro",
+    "Tipo": "Ropa",
+    "Medida": "",
+    "Precio": 25,
+    "Unidades": 1,
+    "Disponible": true,
+    "Imagenes": [
+      "/Recursos/Seccion 2/Ropa/Cinturon-SantaCruz-1.jpeg"
+    ]
+  },
+  {
+    "ID": 16,
+    "Marca": "Tabla Real Skateboards",
+    "Descripcion": "Tabla Real Skateboards azul",
+    "Tipo": "Tabla",
+    "Medida": "8.5",
+    "Precio": 65,
+    "Unidades": 1,
+    "Disponible": true,
+    "Imagenes": [
+      "/Recursos/Seccion 2/Tabla/Tabla-RealSkateboard-1.jpeg"
+    ]
+  },
+  {
+    "ID": 17,
+    "Marca": "Lija Grizzly",
+    "Descripcion": "Lija Grizzly",
+    "Tipo": "Lijas",
+    "Medida": "",
+    "Precio": 12,
+    "Unidades": 1,
+    "Disponible": true,
+    "Imagenes": [
+      "/Recursos/Seccion 2/Lijas/Lija-GrizzlySerpiente-1.jpeg"
+    ]
+  },
+  {
+    "ID": 18,
+    "Marca": "Lija Grizzly",
+    "Descripcion": "Lija Grizzly Multicolor",
+    "Tipo": "Lijas",
+    "Medida": "",
+    "Precio": 12,
+    "Unidades": 1,
+    "Disponible": true,
+    "Imagenes": [
+      "/Recursos/Seccion 2/Lijas/Lija-GrizzlyMulticolor-1.jpeg"
+    ]
+  },
+  {
+    "ID": 19,
+    "Marca": "Lija Grizzly",
+    "Descripcion": "Lija Grizzly ",
+    "Tipo": "Lijas",
+    "Medida": "",
+    "Precio": 12,
+    "Unidades": 1,
+    "Disponible": true,
+    "Imagenes": [
+      "/Recursos/Seccion 2/Lijas/Lija-GrizzlyLetras-1.jpeg"
+    ]
+  },
+  {
+    "ID": 20,
+    "Marca": "Lija Grizzly",
+    "Descripcion": "Lija Grizzly",
+    "Tipo": "Lijas",
+    "Medida": "",
+    "Precio": 12,
+    "Unidades": 1,
+    "Disponible": true,
+    "Imagenes": [
+      "/Recursos/Seccion 2/Lijas/Lija-GrizzlyOsito-1.jpeg"
+    ]
+  },
+  {
+    "ID": 21,
+    "Marca": "Cera para patinar",
+    "Descripcion": "Cera para patinar",
+    "Tipo": "Tabla",
+    "Medida": "",
+    "Precio": 10,
+    "Unidades": 1,
+    "Disponible": true,
+    "Imagenes": [
+      "/Recursos/Seccion 2/Tabla/Cera-Skate-1.jpeg"
     ]
   }
 ]
