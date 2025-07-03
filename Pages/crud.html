@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD de Productos</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="/Styles/crud.css">
+  <link rel="stylesheet" href="/Styles/navbarcrud.css">
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <h2>Gestión de Productos</h2>
+      <div class="navbar-buttons">
+          <button class="btn-formulario" onclick="location.href='formulario.html'">Agregar producto</button>
+          <button class="btn-index" onclick="location.href='/index.html'">Volver a la tienda</button>
+      </div>
+    </div>
+
+
+  <table id="tabla-productos">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Imagen</th>
+        <th>Marca</th>
+        <th>Descripción</th>
+        <th>Tipo</th>
+        <th>Medida</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Activo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      
+      </tr>
+      <!-- Más filas se pueden agregar dinámicamente -->
+    </tbody>
+  </table>
+
+  <script src="../Javascript/crud.js"></script>
+</body>
+</html>
+
+

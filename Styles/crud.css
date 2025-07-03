@@ -1,0 +1,116 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+}
+
+/* Tabla general */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.95rem;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Encabezado */
+th {
+  background-color: #2c5282;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Columnas específicas */
+td.id {
+  width: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+td.imagen {
+  width: 80px;
+  text-align: center;
+}
+
+td.marca,
+td.descripcion,
+td.tipo,
+td.medida {
+  font-size: 15px;
+}
+
+td.precio,
+td.unidades,
+td.disponible {
+  font-size: 15px;
+  text-align: center;
+  white-space: nowrap;
+  width: 10px;
+}
+
+img.thumbnail {
+  width: 60px;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Acciones con botones en fila horizontal */
+td.acciones {
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  min-width: 160px;
+}
+
+/* Botones base */
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 70px;
+}
+
+/* Botones específicos */
+.edit-btn {
+  background: #3182ce;
+  color: white;
+}
+
+.delete-btn {
+  background: #e53e3e;
+  color: white;
+}
+
+.accept-btn {
+  background: #38a169;
+  color: white;
+}
+
+.cancel-btn {
+  background: #a0aec0;
+  color: white;
+}
+
+.add-btn {
+  background: #4CAF50; /* verde brillante */
+  color: white;
+}
+
+.add-btn:hover {
+  background: #2d8700;
+}
+
