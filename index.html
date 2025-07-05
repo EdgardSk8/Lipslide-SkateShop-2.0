@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 
     <!------------------------------------------------------------------------------------------->
@@ -91,6 +91,12 @@
 
         </div>
 
+        <div class="donaciones">
+
+            <a href=""> Donaciones </a>
+
+        </div>
+
     </header>
 
     <!------------------------------------------------------------------------------------------->
@@ -162,12 +168,14 @@
           <a href="https://www.instagram.com/lipslide_skate_shop?igsh=cXhsdDY1cHRhaDkz" target="_blank"><i class="fab fa-instagram"></i></a>
           <a href="https://wa.me/+50585310766" target="_blank"><i class="fab fa-whatsapp"></i></a>
           <a href="mailto:ejemplo@correo.com"><i class="fas fa-envelope"></i></a>
+          <img class="QRimg" id="copiarQR" src="./Recursos/Logos/QRLipslide.png" alt="Sin Codigo QR"> <!-- QR de la pagina Lipslide -->
 
         </div>
 
         <p class="footer-text">© 2025 Lipslide SkateShop. Todos los derechos reservados.</p>
 
     </footer>
+
     <link rel="stylesheet" href="./Styles/modal-productos.css">
     <script src="./Javascript/modal-productos.js"></script>
 
@@ -195,5 +203,22 @@
     <script src="CredencialesFirebase.js"></script>
     -->
 
+    <script>
+    document.getElementById("copiarQR").addEventListener("click", async () => {
+        const linkSitio = "https://lipslide-skateshop.web.app/";
+
+        try {
+        await navigator.clipboard.writeText(linkSitio);
+        alert("✅ Link copiado al portapapeles.");
+        } catch (err) {
+        console.error("Error al copiar el enlace:", err);
+        alert("❌ No se pudo copiar el enlace.");
+        }
+    });
+</script>
+
+
 </body>
+
+
 </html>

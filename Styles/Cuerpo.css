@@ -1,7 +1,7 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Elimina los márgenes por defecto de todos los elementos */
+  padding: 0; /* Elimina el relleno (padding) por defecto de todos los elementos */
+  box-sizing: border-box; /* Incluye el padding y el borde dentro del tamaño total del elemento */
 }
 
 html {
@@ -13,12 +13,3 @@ html {
   display: flex;
   flex-direction: column;
 }
-
-
-
-
-
-
-
-
-

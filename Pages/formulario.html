@@ -1,42 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Agregar Producto</title>
 
+  <!------------------------------------------------------------------------------------------->
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/Styles/formulario.css">
-<link rel="stylesheet" href="/Styles/navbarcrud.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!------------------------------------------------------------------------------------------->
+
+    <!------------------------->
+    <!-- Titulo de la pagina -->
+    <!------------------------->
+
+  <title>Agregar Producto</title>
+
+  <!------------------------------------------------------------------------------------------->
+
+    <!------------------------------------------>
+    <!-- Importacion de Fuente y archivos css -->
+    <!------------------------------------------>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/Styles/formulario.css"> <!-- Estilo del formulario -->
+  <link rel="stylesheet" href="/Styles/navbarcrud.css"> <!-- Estilo de la navbar-->
+
+  <!------------------------------------------------------------------------------------------->
 
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
+  <!------------------------------------------------------------------------------------------->
+
+    <!------------>
+    <!-- NAVBAR -->
+    <!------------>
+
   <div class="navbar">
+
     <h2>Agregar Productos</h2>
+
     <div class="navbar-buttons">
-        <button class="btn-formulario" onclick="location.href='crud.html'">Editar productos</button>
-        <button class="btn-index" onclick="location.href='/index.html'">Volver a la tienda</button>
+
+      <button class="btn-formulario" onclick="location.href='crud.html'">Editar productos</button> <!-- Btn para redireccionar al crud.hmtl -->
+      <button class="btn-index" onclick="location.href='/index.html'">Volver a la tienda</button> <!-- Btn para redireccionar al index.html -->
+    
     </div>
+
   </div>
 
+  <!------------------------------------------------------------------------------------------->
+
+    <!---------------->
+    <!-- Formulario -->
+    <!---------------->
+
   <form id="form-producto" enctype="multipart/form-data" method="POST" action="/agregar" autocomplete="off">
+
+    <!----------- ID del producto (auto) ----------->
+
     <div>
       <label for="ID">ID</label>
       <input type="number" name="ID" id="inputID" disabled />
     </div>
+
+    <!----------- Marca del producto (Titulo) ----------->
 
     <div>
       <label for="Marca">Marca</label>
       <input type="text" name="Marca" required />
     </div>
 
+    <!----------- Descripcion del producto ----------->
+
     <div>
       <label for="Descripcion">Descripción</label>
       <textarea name="Descripcion" required></textarea>
     </div>
+
+    <!----------- Selector sobre tipo de producto ----------->
 
     <div>
       <label for="Tipo">Tipo</label>
@@ -52,43 +95,69 @@
       </select>
     </div>
 
+    <!----------- Medida o Talla (8.0, 8.5, USA 9, 159mm etc) ----------->
+
     <div>
       <label for="Medida">Medida</label>
       <input type="text" name="Medida" />
     </div>
+
+    <!----------- Precio del producto (En dolares) ----------->
 
     <div>
       <label for="Precio">Precio ($)</label>
       <input type="number" name="Precio" step="0.01" required />
     </div>
 
+    <!----------- Unidades del producto ----------->
+
     <div>
       <label for="Unidades">Unidades</label>
       <input type="number" name="Unidades" required />
     </div>
+
+    <!----------- Check Box para verificar si el producto esta disponible ----------->
 
     <div class="checkbox-wrapper">
       <input type="checkbox" name="Disponible" id="Disponible" checked />
       <label for="Disponible">Disponible</label>
     </div>
 
+    <!----------- Nombre de la imagen (Mayor orden) ----------->
+
     <div>
       <label for="NombreImagen">Nombre para la imagen (sin extensión)</label>
       <input type="text" name="NombreImagen" required />
     </div>
 
+    <!----------- IMG del producto ----------->
+
     <div>
+
       <label for="imagen">Imagen del producto</label> <br>
+
       <div class="file-input-wrapper">
+
         <input type="file" name="imagen" id="imagen" accept="image/*" multiple required />
         <label class="file-input-label" for="imagen">Elegir archivos</label>
+
       </div>
-      <div id="preview"></div> 
+
+      <div id="preview"></div> <!--Imagen en pequenio -->
+
     </div>
+
+    <!----------- Boton para guardar el producto ----------->
 
     <button class="boton" type="submit">Guardar producto</button>
 
   </form>
+
+    <!------------------------>
+    <!-- Fin del Formulario -->
+    <!------------------------>
+
+    <!----------- Integracion de archivos js ----------->
 
    <script src="../Javascript/formulario.js"></script>
 

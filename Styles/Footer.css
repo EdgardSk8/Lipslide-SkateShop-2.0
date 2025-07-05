@@ -25,4 +25,10 @@
   font-size: 14px;
   color: #aaa;
 }
+
+.QRimg{
+  margin-left: 10px;
+  width: 20px;
+  cursor: pointer;
+}
   

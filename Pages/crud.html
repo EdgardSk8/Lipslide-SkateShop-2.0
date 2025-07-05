@@ -1,28 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+  <!------------------------------------------------------------------------------------------->
+
   <meta charset="UTF-8">
+
+  <!------------------------------------------------------------------------------------------->
+
+    <!------------------------->
+    <!-- Titulo de la pagina -->
+    <!------------------------->
+
   <title>CRUD de Productos</title>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <link rel="stylesheet" href="/Styles/crud.css">
-  <link rel="stylesheet" href="/Styles/navbarcrud.css">
+
+  <!------------------------------------------------------------------------------------------->
+
+    <!--------------------------------------------->
+    <!-- Importacion de Librerias y archivos css -->
+    <!--------------------------------------------->
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- Libreria de JQuery -->
+
+  <link rel="stylesheet" href="/Styles/crud.css"> <!-- Estilos de la pagina crud.html -->
+  <link rel="stylesheet" href="/Styles/navbarcrud.css"> <!-- Archivo de estilo de la NAVBAR -->
+
+  <!------------------------------------------------------------------------------------------->
 
 </head>
 <body>
 
+  <!------------------------------------------------------------------------------------------->
+
+    <!------------>
     <!-- NAVBAR -->
+    <!------------>
+
     <div class="navbar">
+
       <h2>Gestión de Productos</h2>
+
       <div class="navbar-buttons">
-          <button class="btn-formulario" onclick="location.href='formulario.html'">Agregar producto</button>
-          <button class="btn-index" onclick="location.href='/index.html'">Volver a la tienda</button>
+
+          <button class="btn-formulario" onclick="location.href='formulario.html'">Agregar producto</button> <!-- Btn para redireccionar al formulario.hmtl -->
+          <button class="btn-index" onclick="location.href='/index.html'">Volver a la tienda</button> <!-- Btn para redireccionar al index.html -->
+
       </div>
     </div>
 
+  <!------------------------------------------------------------------------------------------->
+
+    <!----------------------------------->
+    <!-- Tabla de productos y detalles -->
+    <!----------------------------------->
 
   <table id="tabla-productos">
-    <thead>
-      <tr>
+
+    <thead> <!-- Sección del encabezado de la tabla -->
+
+      <tr> <!-- Fila del encabezado -->
+
         <th>ID</th>
         <th>Imagen</th>
         <th>Marca</th>
@@ -33,17 +70,21 @@
         <th>Stock</th>
         <th>Activo</th>
         <th>Acciones</th>
+        
       </tr>
+
     </thead>
 
-    <tbody>
-      
-      </tr>
-      <!-- Más filas se pueden agregar dinámicamente -->
-    </tbody>
+    <tbody> <!-- Aca se autorellenaran los datos por js --> </tbody>
+
   </table>
 
+  <!------------------------------------------------------------------------------------------->
+
+  <!----------- Integracion de archivos js ----------->
+
   <script src="../Javascript/crud.js"></script>
+  
 </body>
 </html>
 
