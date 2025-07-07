@@ -2,8 +2,12 @@
 /* Iniciar servicio con: node ./Javascript/server.js
 /* ────────────────────────────────────────────────── */
 
+/* ────────────────────────────────────────────────── */
+/* Subir Cambios a Servidor Firebase: firebase deploy
+/* ────────────────────────────────────────────────── */
+
 /* ──────────────────────────────
-   SECCIÓN: CONFIGURACIÓN GENERAL
+  SECCIÓN: CONFIGURACIÓN GENERAL
 ───────────────────────────────── */
 const express = require("express");
 const fs = require("fs");
@@ -135,16 +139,37 @@ app.get("/productos", (req, res) => {
   }
 });
 
+/* ────────────────────────────── */
+/* SECCIÓN: API - ACTUALIZAR PRODUCTO */
+/* ────────────────────────────── */
 
+app.post("/actualizar/:id", (req, res) => {
+  const id = parseInt(req.params.id);
 
+  if (!fs.existsSync(RUTA_BD)) {
+    return res.status(404).json({ error: "Base de datos no encontrada." });
+  }
 
+  let productos = JSON.parse(fs.readFileSync(RUTA_BD, "utf-8"));
+  const index = productos.findIndex(p => p.ID === id);
 
+  if (index === -1) {
+    return res.status(404).json({ error: "Producto no encontrado." });
+  }
 
-/* ──────────────────────────────
-   SECCIÓN: API - ACTUALIZAR PRODUCTO (falta en tu código)
-───────────────────────────────── */
-// Aquí deberías tener una ruta como:
-// app.post("/actualizar/:id", (req, res) => { ... })
+  // Actualizar los campos que vengan en el cuerpo (req.body)
+  productos[index].Marca = req.body.Marca || productos[index].Marca;
+  productos[index].Descripcion = req.body.Descripcion || productos[index].Descripcion;
+  productos[index].Tipo = req.body.Tipo || productos[index].Tipo;
+  productos[index].Medida = req.body.Medida || productos[index].Medida;
+  productos[index].Precio = req.body.Precio !== undefined ? parseFloat(req.body.Precio) : productos[index].Precio;
+  productos[index].Unidades = req.body.Unidades !== undefined ? parseInt(req.body.Unidades) : productos[index].Unidades;
+  productos[index].Disponible = req.body.Disponible !== undefined ? req.body.Disponible === "true" : productos[index].Disponible;
+
+  fs.writeFileSync(RUTA_BD, JSON.stringify(productos, null, 2));
+  res.json({ mensaje: "Producto actualizado correctamente." });
+});
+
 
 /* ──────────────────────────────
    SECCIÓN: API - ELIMINAR PRODUCTO 
@@ -187,5 +212,5 @@ app.post("/producto/:id/activar", (req, res) => {
    SECCIÓN: INICIAR SERVIDOR
 ───────────────────────────────── */
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}/formulario.html`);
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

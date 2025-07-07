@@ -65,4 +65,94 @@ $(document).on("click", ".add-btn", function () {
   });
 });
 
+//--------------------------------------------------------------------------------------------
+
+$(document).on("click", ".edit-btn", function () {
+  const fila = $(this).closest("tr");
+  const id = fila.data("id");
+
+  // Obtener los datos actuales
+  const marca = fila.find(".marca").text();
+  const descripcion = fila.find(".descripcion").text();
+  const tipoActual = fila.find(".tipo").text();
+  const medida = fila.find(".medida").text();
+  const precio = parseFloat(fila.find(".precio").text().replace('$', ''));
+  const unidades = parseInt(fila.find(".unidades").text());
+  const disponible = fila.find(".disponible").text().trim() === "Sí";
+
+  // Opciones para el campo "Tipo"
+  const tipos = ["Tablas", "Lijas", "Trucks", "Ruedas", "Balineras", "Accesorios", "Extras"];
+
+  // Reemplazar celdas con inputs
+  fila.find(".marca").html(`<input type="text" class="input-tabla" value="${marca}">`);
+  fila.find(".descripcion").html(`<input type="text" class="input-tabla" value="${descripcion}">`);
+  
+  // Selector con la opción actual seleccionada
+  let selectorTipo = `<select class="select-tipo">`;
+  tipos.forEach(t => {
+    const selected = (t === tipoActual) ? "selected" : "";
+    selectorTipo += `<option value="${t}" ${selected}>${t}</option>`;
+  });
+
+  selectorTipo += `</select>`;
+  fila.find(".tipo").html(selectorTipo);
+
+  fila.find(".medida").html(`<input type="text" class="input-tabla-medida" value="${medida}">`);
+
+  fila.find(".precio").html(`
+    <div class="input-num-wrapper">
+      <button class="btn-num menos">−</button>
+      <input type="number" value="${precio}" min="0">
+      <button class="btn-num mas">+</button>
+    </div>
+  `);
+
+  fila.find(".unidades").html(`
+    <div class="input-num-wrapper">
+      <button class="btn-num menos">−</button>
+      <input type="number" value="${unidades}" min="0">
+      <button class="btn-num mas">+</button>
+    </div>
+  `);
+
+  fila.find(".disponible").html(`<input type="checkbox" ${disponible ? "checked" : ""}>`);
+
+  // Cambiar botones
+  fila.find(".acciones").html(`
+    <button class="save-btn">Aceptar</button>
+    <button class="cancel-btn">Cancelar</button>
+  `);
+});
+
+$(document).on("click", ".save-btn", function () {
+  const fila = $(this).closest("tr");
+  const id = fila.data("id");
+
+  // Leer los valores desde los inputs
+  const datosActualizados = {
+    Marca: fila.find(".marca input").val(),
+    Descripcion: fila.find(".descripcion input").val(),
+    Tipo: fila.find(".tipo select").val(),
+    Medida: fila.find(".medida input").val(),
+    Precio: parseFloat(fila.find(".precio input").val()),
+    Unidades: parseInt(fila.find(".unidades input").val()),
+    Disponible: fila.find(".disponible input").is(":checked").toString()
+  };
+
+  // Enviar al servidor
+  $.post(`/actualizar/${id}`, datosActualizados, function (respuesta) {
+    alert(respuesta.mensaje);
+    cargarProductos(); // Recargar la tabla con los datos actualizados
+  }).fail(function () {
+    alert("Error al actualizar el producto.");
+  });
+});
+
+$(document).on("click", ".cancel-btn", function () {
+  cargarProductos(); // Simplemente recarga la tabla original
+});
+
+
+
+
 

@@ -73,7 +73,7 @@ td.acciones {
 }
 
 /* Botones base */
-button {
+td.acciones button {
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
