@@ -171,9 +171,9 @@ app.post("/actualizar/:id", (req, res) => {
 });
 
 
-/* ──────────────────────────────
-   SECCIÓN: API - ELIMINAR PRODUCTO 
-───────────────────────────────── */
+/* ───────────────────────────────
+  SECCIÓN: API - ELIMINAR PRODUCTO 
+────────────────────────────────── */
 
 app.post("/producto/:id/disponible", (req, res) => {
   const id = parseInt(req.params.id);

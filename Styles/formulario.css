@@ -1,164 +1,64 @@
 * {
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+  margin: 0;padding: 0;
 }
 
-html, body {
-  height: 100%;
-  overflow: hidden;
-  background: #f0f4f8; /* azul muy claro */
-  color: #1a202c; /* texto azul oscuro */
-  flex-direction: column;
-  align-items: center;
+body { padding: 10px; } /* Espacio interno del cuerpo */
+
+form#form-producto { /* Estilo del contenedor form-producto */
+  background-color: #bccee2;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px;max-width: 100%;padding: 20px;border-radius: 8px;
 }
 
-form {
-  width: 100vw;
-  max-width: 100vw;
-  height: calc(100vh - 100px);
-  background: #e2e8f0; /* azul muy claro */
-  padding: 20px 30px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(36px, auto);
-  gap: 15px 30px;
-  overflow: hidden;
-  border-radius: 12px 12px 0 0;
-  box-shadow: 0 8px 20px rgba(44, 82, 130, 0.3);
-}
-label {
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #152a44; /* azul */
-  margin-bottom: 4px;
-  display: block;
-}
-input[type="text"],
-input[type="number"],
-select,
-textarea {
-  width: 100%;
-  font-size: 0.9rem;
-  border-radius: 8px;
-  border: 1.8px solid #a3bffa; /* borde azul claro */
-  padding: 6px 10px;
-  background: #ffffff; /* blanco */
-  color: #1a202c;
-  font-weight: 400;
-  transition: all 0.25s ease;
-  height: 32px;
-}
-textarea {
-  resize: none;
-  height: 64px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-input[type="text"]:focus,
-input[type="number"]:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-  border-color: #2b6cb0; /* azul foco */
-  background: #ebf4ff;
-  box-shadow: 0 0 8px rgba(66, 153, 225, 0.6);
-}
-#inputID {
-  background: #cbd5e0;
-  color: #718096;
-  cursor: not-allowed;
-}
-.checkbox-wrapper {
-  grid-column: 1 / 3;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-  accent-color: #2b6cb0;
-}
-.checkbox-wrapper label {
-  margin: 0;
-  font-weight: 600;
-  color: #2c5282;
-  cursor: pointer;
+form#form-producto > div:not(#imgproducto) /* div de form menos el div de ID:imgproducto */
+{display: flex;flex-direction: column;} /* Estilo en columnas */
+
+label {font-weight: bold;}/* Todas las etiquetas Label seran e negrita */
+
+input[type="text"],input[type="number"], textarea, select { /* Estilo de inputs */
+  padding: 6px 8px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-/* Input file personalizado */
-.file-input-wrapper {
-  position: relative;
-  width: 100%;
+input[type="text"]:hover, input[type="number"]:hover, textarea:hover, select:hover
+{box-shadow: 0 0 0 2px #086cd089;} /* Al pasar el raton */
+
+input[type="text"]:focus, input[type="number"]:focus, textarea:focus, select:focus
+{outline: 0;box-shadow: 0 0 0 1px #0858d0a9;} /* Al tener foco */
+
+textarea {min-height: 60px;} /* Textarea más compacto (Descripcion) */
+
+.checkbox-wrapper {display: flex;align-items: center;} /* CheckBox y Label centrados */
+
+.file-input-label { /* Estilo del boton de agregar imagenes */
+  background-color: #007bff;padding: 6px 10px;
+  color: white;border-radius: 4px;cursor: pointer;
 }
-input[type="file"] {
-  opacity: 0;
-  position: absolute;
-  width: 100%;
-  height: 36px;
-  cursor: pointer;
-  z-index: 2;
+
+input[type="file"] { display: none; } /* Ocultar input file original */
+
+#imgproducto { padding: 8px; } /* Contenedor de imagenes */
+
+#imgproducto img { /* Estilo de la img */
+  width: 90px;height: 90px; /* Tamanio */
+  object-fit: cover;border-radius: 6px;margin: 8px;
 }
-.file-input-label {
-  display: inline-block;
-  width: 100%;
-  height: 36px;
-  background: #2b6cb0; /* azul */
+
+.boton {/* Botón Guardar Producto */
+  grid-column: span 3;
+  padding: 10px;
+  background-color: #00b894;
   color: white;
-  text-align: center;
-  line-height: 36px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 3px 6px rgba(43, 108, 176, 0.6);
-  user-select: none;
-  transition: background-color 0.25s ease;
-}
-
-.file-input-label:hover {
-  background: #2c5282; /* azul oscuro hover */
-  box-shadow: 0 4px 10px rgba(44, 82, 130, 0.9);
-}
-
-/* Contenedor miniaturas */
-#preview {
-  grid-column: 3 / 4;
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 8px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  height: 88px;
-  padding-bottom: 6px;
-}
-#preview img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(44, 82, 130, 0.4);
-  flex-shrink: 0;
-}
-
-.boton {
-  grid-column: 1 / 4;
-  justify-self: center;
-  padding: 12px 48px;
-  background-color: #2c5282; /* azul oscuro */
-  color: white;
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: bold;
   border: none;
-  border-radius: 12px;
+  border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(44, 82, 130, 0.6);
-  transition: background-color 0.25s ease;
-  white-space: nowrap;
-  align-self: end;
+  transition: background 0.3s ease;
 }
 
-.boton:hover {
-  background-color: #2b6cb0;
-  box-shadow: 0 6px 18px rgba(43, 108, 176, 0.9);
-}
+.boton:hover { background-color: #019874; } /* Al pasar el raton */

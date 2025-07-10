@@ -122,6 +122,23 @@ $(document).on("click", ".edit-btn", function () {
     <button class="save-btn">Aceptar</button>
     <button class="cancel-btn">Cancelar</button>
   `);
+
+  $(document).on("click", ".btn-num.mas", function () {
+  const input = $(this).siblings("input[type='number']");
+  let val = parseInt(input.val()) || 0;
+  input.val(val + 1);
+
+});
+
+$(document).on("click", ".btn-num.menos", function () {
+  const input = $(this).siblings("input[type='number']");
+  let val = parseInt(input.val()) || 0;
+  if (val > 0) {
+    input.val(val - 1);
+  }
+});
+
+  
 });
 
 $(document).on("click", ".save-btn", function () {
@@ -141,12 +158,14 @@ $(document).on("click", ".save-btn", function () {
 
   // Enviar al servidor
   $.post(`/actualizar/${id}`, datosActualizados, function (respuesta) {
-    alert(respuesta.mensaje);
+    //alert(respuesta.mensaje);
     cargarProductos(); // Recargar la tabla con los datos actualizados
   }).fail(function () {
     alert("Error al actualizar el producto.");
   });
 });
+
+
 
 $(document).on("click", ".cancel-btn", function () {
   cargarProductos(); // Simplemente recarga la tabla original

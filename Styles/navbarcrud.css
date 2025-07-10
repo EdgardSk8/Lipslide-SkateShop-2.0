@@ -6,7 +6,7 @@
   padding: 15px 25px; /* Espaciado interno: 15px arriba/abajo, 25px izquierda/derecha */
   color: white; /* Color del texto */
   border-radius: 8px; /* Bordes redondeados */
-  margin-bottom: 20px; /* Separación inferior con otros elementos */
+  margin-bottom: 10px; /* Separación inferior con otros elementos */
 }
 
 .navbar h2 {
